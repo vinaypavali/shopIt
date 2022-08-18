@@ -12,6 +12,12 @@ const Home = () => {
         navigate("/login" )
       }
 
+      const handleBikes = ()=>{
+        navigate("/bikes")
+      }
+      const handleCars = ()=>{
+        navigate("/cars")
+      }
   return (
     <>
     <div className="navbar">
@@ -22,6 +28,15 @@ const Home = () => {
                 <button className="navButton"  onClick={handleLogin}>Login</button>   
             </div>
         </div>
+         </div>
+
+         <div className="vehicle">
+              <div className="bikes">
+                <button className='vehBtn' onClick={handleBikes}>Explore Bikes</button>
+              </div>
+              <div className="cars">
+                <button className='vehBtn' onClick={handleCars}>Explore Cars</button>
+                </div>
          </div>
     </>
   )
