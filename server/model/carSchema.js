@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const carSchema = new mongoose.Schema({
+    carphoto:{
+        type:String,
+        required:true
+    },
     carname:{
         type:String,
         required:true

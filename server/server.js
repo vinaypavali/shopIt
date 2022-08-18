@@ -1,18 +1,42 @@
 const express = require('express');
 const app = express(); 
 const router = express.Router()
+const jwt = require('jsonwebtoken')
 const { default: mongoose } = require('mongoose')
 const User = require('./model/userSchema');
 const Bike = require('./model/bikeSchema');
 const Car = require('./model/carSchema');
 app.use(express.json())
 app.use(router)
+
 mongoose.connect("mongodb+srv://harshu:harshu@showroomc.0zml2ss.mongodb.net/?retryWrites=true&w=majority",{
     useNewUrlParser:true,
     useUnifiedTopology:true,
  
 }).then(()=>console.log("MongoDB Connected..."))
 .catch((err)=>console.log(`Not Connected-- ${err}`))
+
+router.get('./login',(req,res)=>{
+    
+})
+router.post('/login',(req,res)=>{
+    const {email,password}=req.body
+    User.findOne({email:email},(err,user)=>{
+        if (user) {
+            if(password===user.password){
+                res.send({message:"user login sucessfully ",user:user})
+            }else{
+                res.send({message:"incorrect password"})
+            }
+            
+       }else{
+        res.send({message:"user not registered"}) 
+       }
+
+    }
+    )
+
+})
 
 router.get('/register',(req,res)=>{  
      

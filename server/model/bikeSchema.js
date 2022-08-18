@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const bikeSchema = new mongoose.Schema({
+    bikephoto:{
+        type:String,
+        required:true
+    },
     bikename:{
         type:String,
         required:true
