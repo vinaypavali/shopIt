@@ -1,0 +1,17 @@
+body{
+    background-color: black;
+
+}
+.search{
+    color: black;
+    align-items: center;
+    justify-content: center;
+    margin-left: 350px;  
+}
+.search input{
+    border: 2px solid white;
+    border-radius: 30px;
+    margin-top: 20px;
+    width: 500px;
+    padding: 15px;
+}

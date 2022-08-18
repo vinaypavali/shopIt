@@ -3,7 +3,11 @@ import './vehicles.css'
 
 const Bikes = () => {
   return (
-    <div>Bikes</div>
+    <>
+      <div className="search">
+         <input placeholder="Search for Bikes"/>
+      </div>
+    </>
   )
 }
 

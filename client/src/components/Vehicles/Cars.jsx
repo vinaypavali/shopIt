@@ -2,8 +2,15 @@ import React from 'react'
 import './vehicles.css'
 
 const Cars = () => {
+
+ 
+
   return (
-    <div>Cars</div>
+    <>
+    <div className="search">
+        <input placeholder="Search for Cars"/>
+    </div>
+  </>
   )
 }
 
