@@ -4,7 +4,8 @@
   "description": "bike and car showroom with admin",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "server":"nodemon server"
   },
   "author": "",
   "license": "ISC",
