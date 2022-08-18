@@ -16,7 +16,7 @@ const Home = () => {
     <>
     <div className="navbar">
         <div className="navContainer">
-            <span className='logo'>wheeler</span>
+            <span className='logo'>The Showroom</span>
             <div className="navItems">
                 <button className="navButton"  onClick={handleRegister}>Register</button>
                 <button className="navButton"  onClick={handleLogin}>Login</button>   
