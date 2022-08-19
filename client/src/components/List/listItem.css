@@ -13,17 +13,19 @@
 }
 .pic{
   color: white;
+  border-radius: 5px;
 }
 .pic img{
-  background-color: red;
   height: 250px;
   width: 300px;
+  border-radius: 5px;
 }
 .details{
   color: white;
   
 }
 .vehicleName h1{
+   
   color: white;
   margin-top: 30px;
   margin-left: 20px;

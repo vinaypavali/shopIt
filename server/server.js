@@ -116,6 +116,16 @@ router.post('/cars',(req,res)=>{
 
 })
 
+//getCars
+router.get("/allcars", async (req, res) => {
+    try {
+       const allcars = await Car.find();
+       res.status(200).json(allcars);
+    } catch (err) {
+      
+    }
+  });
+
 // addBikes
 router.post('/bikes',(req,res)=>{
     const {bikephoto,bikename, price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body}=req.body;
@@ -129,10 +139,17 @@ router.post('/bikes',(req,res)=>{
         } else {
             res.send({message:"Bike Saved"})
         }
-
     });
-
 })
+//getBikes
+router.get("/allbikes", async (req, res) => {
+    try {
+       const allbikes = await Bike.find();
+       res.status(200).json(allbikes);
+    } catch (err) {
+      
+    }
+  });
 
 
 
