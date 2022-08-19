@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express(); 
+const multer = require("multer");
 const router = express.Router()
 const jwt = require('jsonwebtoken')
 const { default: mongoose } = require('mongoose')
@@ -15,6 +16,22 @@ mongoose.connect("mongodb+srv://harshu:harshu@showroomc.0zml2ss.mongodb.net/?ret
  
 }).then(()=>console.log("MongoDB Connected..."))
 .catch((err)=>console.log(`Not Connected-- ${err}`))
+
+
+//Upload Image
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, "images");
+    },
+    filename: (req, file, cb) => {
+      cb(null, "mariya.jpg");
+    },
+  });
+  
+  const upload = multer({ storage: storage });
+  app.post("/upload", upload.single("file"), (req, res) => {
+    res.status(200).json("File has been uploaded");
+  });
 
 // Register User
 router.post('/register',async(req,res)=>{
