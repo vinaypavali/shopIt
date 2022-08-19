@@ -1,5 +1,6 @@
 import React from 'react'
 import './vehicles.css'
+import ItemList from '../List/ClistItem'
 
 const Cars = () => {
 
@@ -9,6 +10,7 @@ const Cars = () => {
     <>
     <div className="search">
         <input placeholder="Search for Cars"/>
+        <ItemList />
     </div>
   </>
   )

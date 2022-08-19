@@ -1,0 +1,34 @@
+.itemContainer{
+  background-color: rgb(32, 30, 30);
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left: 100px;
+  height: 250px;
+  width: 666px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+.itemContainer:hover{
+  background-color: black;
+}
+.pic{
+  color: white;
+}
+.pic img{
+  background-color: red;
+  height: 250px;
+  width: 300px;
+}
+.details{
+  color: white;
+  
+}
+.vehicleName h1{
+  color: white;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+.vehiclePrice h3{
+  color: white;
+  margin-left: 20px;
+}
