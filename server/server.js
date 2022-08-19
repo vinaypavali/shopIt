@@ -100,10 +100,10 @@ router.post('/login',(req,res)=>{
 
 // addCars
 router.post('/cars',(req,res)=>{
-    const {carname, price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body}=req.body;
+    const {carphoto,carname, price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body}=req.body;
 
     const car = new Car({
-        carname,price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body
+        carphoto,carname,price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body
     }) 
     car.save(err=>{
         if (err) {
@@ -118,10 +118,10 @@ router.post('/cars',(req,res)=>{
 
 // addBikes
 router.post('/bikes',(req,res)=>{
-    const {bikename, price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body}=req.body;
+    const {bikephoto,bikename, price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body}=req.body;
 
     const bike = new Bike({
-        bikename,price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body
+        bikephoto,bikename,price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body
     }) 
     bike.save(err=>{
         if (err) {

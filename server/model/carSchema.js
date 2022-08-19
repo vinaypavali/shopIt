@@ -7,6 +7,7 @@ const carSchema = new mongoose.Schema({
     },
     carname:{
         type:String,
+        unique : true,
         required:true
 
     },
