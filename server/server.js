@@ -16,75 +16,7 @@ mongoose.connect("mongodb+srv://harshu:harshu@showroomc.0zml2ss.mongodb.net/?ret
 }).then(()=>console.log("MongoDB Connected..."))
 .catch((err)=>console.log(`Not Connected-- ${err}`))
 
-router.get('./login',(req,res)=>{
-    
-})
-router.post('/login',(req,res)=>{
-    const {email,password}=req.body
-    User.findOne({email:email},(err,user)=>{
-        if (user) {
-            if(password===user.password){
-                res.send({message:"user login sucessfully ",user:user})
-            }else{
-                res.send({message:"incorrect password"})
-            }
-            
-       }else{
-        res.send({message:"user not registered"}) 
-       }
-
-    }
-    )
-
-})
-
-router.get('/register',(req,res)=>{  
-     
-})
-
-router.get('/cars',(req,res)=>{  
-     
-})
-
-router.post('/cars',(req,res)=>{
-    const {carname, price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body}=req.body;
-
-    const car = new Car({
-        carname,price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body
-    }) 
-    car.save(err=>{
-        if (err) {
-            res.send(err)
-        } else {
-            res.send({message:"Car Saved"})
-        }
-
-    });
-
-})
-
-router.get('/bikes',(req,res)=>{  
-     
-})
-
-router.post('/bikes',(req,res)=>{
-    const {bikename, price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body}=req.body;
-
-    const bike = new Bike({
-        bikename,price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body
-    }) 
-    bike.save(err=>{
-        if (err) {
-            res.send(err)
-        } else {
-            res.send({message:"Bike Saved"})
-        }
-
-    });
-
-})
-
-
+// Register User
 router.post('/register',async(req,res)=>{
     const {name,email,phone,password,cpassword}=req.body;
      let exist = await User.findOne({email})
@@ -108,5 +40,83 @@ router.post('/register',async(req,res)=>{
        }
     
   })
+
+  // Update User 
+router.put('/:id',async(req,res)=>{
+    if(req.body.userId === req.params.id){
+        try{
+            const updateUser = await User.findByIdAndUpdate(req.params.id,{
+                $set:req.body,
+            },{ new: true });
+          res.status(200).json(updateUser);
+
+        }catch(err){
+             res.status(500).res.json(err);
+        }
+
+    }else{
+        res.status(401).json('you can update only your account')
+    }
+
+})
+
+
+// Login User
+router.post('/login',(req,res)=>{
+    const {email,password}=req.body
+    User.findOne({email:email},(err,user)=>{
+        if (user) {
+            if(password===user.password){
+                res.send({message:"user login sucessfully ",user:user})
+            }else{
+                res.send({message:"incorrect password"})
+            }
+            
+       }else{
+        res.send({message:"user not registered"}) 
+       }
+
+    }
+    )
+
+})
+
+// addCars
+router.post('/cars',(req,res)=>{
+    const {carname, price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body}=req.body;
+
+    const car = new Car({
+        carname,price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body
+    }) 
+    car.save(err=>{
+        if (err) {
+            res.send(err)
+        } else {
+            res.send({message:"Car Saved"})
+        }
+
+    });
+
+})
+
+// addBikes
+router.post('/bikes',(req,res)=>{
+    const {bikename, price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body}=req.body;
+
+    const bike = new Bike({
+        bikename,price,description,fuel,engine,milage,maxpower,maxtorque,seat,transmission,body
+    }) 
+    bike.save(err=>{
+        if (err) {
+            res.send(err)
+        } else {
+            res.send({message:"Bike Saved"})
+        }
+
+    });
+
+})
+
+
 
 app.listen(8000,()=>console.log(`Server started..`)) 
