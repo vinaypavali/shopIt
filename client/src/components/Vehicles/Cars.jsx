@@ -24,7 +24,7 @@ const Cars = () => {
     </div>
     <div className="data">
     {cars.map((c)=>(
-              <CitemList car={c}/>
+              <CitemList key={c.toString()} car={c}/>
          ))}
        
      </div>

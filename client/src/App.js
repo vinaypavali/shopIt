@@ -5,17 +5,25 @@ import Login from  './components/Login/Login';
 import Register from  './components/Register/Register';
 import Car from './components/Vehicles/Cars';
 import Bike from './components/Vehicles/Bikes';
+import CarDetail from './components/Details/Cvehicle'
+import BikeDetail from './components/Details/Bvehicle'
+import Profile from './components/Profile/Profile'
+
  
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
-    <Route path="/" element={<Home/>}/>
-    <Route path="/login" element={<Login/>}/>
-    <Route path="/register" element={<Register/>}/>
-    <Route path="/bikes" element={<Bike/>}/>
-    <Route path="/cars" element={<Car/>}/>
+      <Route exact path="/" element={<Home/>}/>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/register" element={<Register/>}/>
+      <Route path="/bikes" element={<Bike/>}/>
+      <Route path="/cars" element={<Car/>}/>
+      <Route path="/profile" element={<Profile/>}/>
+      <Route path="/bike/:bikeId" element={<BikeDetail/>}/> 
+      <Route path="/car/:carId" element={<CarDetail/>}/>
+     
     </Routes>
     </BrowserRouter>
   );

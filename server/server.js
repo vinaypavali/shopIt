@@ -5,14 +5,15 @@ const router = express.Router()
 const jwt = require('jsonwebtoken')
 const { default: mongoose } = require('mongoose')
 const User = require('./model/userSchema');
-const Bike = require('./model/bikeSchema');
 const Car = require('./model/carSchema');
+const Bike = require('./model/bikeSchema');
 app.use(express.json())
 app.use(router)
 
 mongoose.connect("mongodb+srv://harshu:harshu@showroomc.0zml2ss.mongodb.net/?retryWrites=true&w=majority",{
     useNewUrlParser:true,
     useUnifiedTopology:true,
+
  
 }).then(()=>console.log("MongoDB Connected..."))
 .catch((err)=>console.log(`Not Connected-- ${err}`))
@@ -116,15 +117,33 @@ router.post('/cars',(req,res)=>{
 
 })
 
-//getCars
+// getCars
+
 router.get("/allcars", async (req, res) => {
     try {
        const allcars = await Car.find();
        res.status(200).json(allcars);
+     
     } catch (err) {
       
     }
   });
+
+ 
+
+  router.get("/:id", async (req, res) => {
+    try {
+      const car = await Car.findById(req.params.id);
+      res.status(200).json(car);
+   
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+ 
+
+
 
 // addBikes
 router.post('/bikes',(req,res)=>{
@@ -141,13 +160,27 @@ router.post('/bikes',(req,res)=>{
         }
     });
 })
+
+
+
 //getBikes
 router.get("/allbikes", async (req, res) => {
     try {
        const allbikes = await Bike.find();
        res.status(200).json(allbikes);
+      
     } catch (err) {
       
+    }
+  });
+
+  router.get("/:id", async (req, res) => {
+    try {
+      const bike = await Bike.findById(req.params.id);
+      res.status(200).json(bike);
+      
+    } catch (err) {
+      res.status(500).json(err);
     }
   });
 

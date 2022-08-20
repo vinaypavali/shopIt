@@ -26,13 +26,14 @@ const Home = () => {
             <div className="navItems">
                 <button className="navButton"  onClick={handleRegister}>Register</button>
                 <button className="navButton"  onClick={handleLogin}>Login</button> 
-                <img src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" />  
+                
             </div>
         </div>
          </div>
 
          <div className="vehicle">
               <div className="bikes">
+        
                 <button className='vehBtn' onClick={handleBikes}>Explore Bikes</button>
               </div>
               <div className="cars">

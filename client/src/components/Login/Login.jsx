@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
 import './login.css'
 
 const Login = () =>{
@@ -19,6 +20,16 @@ const Login = () =>{
           [name]:value,
         })
        }
+
+       
+   const login = ()=> {
+    axios.post("/login", user)
+    .then(res =>{alert(res.data.message)
+      navigate("/")
+       } 
+       ) 
+         
+}
   
   
     return (
@@ -27,7 +38,7 @@ const Login = () =>{
           <h1>Login</h1>
           <input type="text"  name='email' value={user.email} onChange={handleChange} placeholder='Enter Your Email' />
           <input type="password"  name='password' value={user.password} onChange={handleChange} placeholder='Enter Your Password' />
-          <div className="button" >Login</div>
+          <div className="button" onClick={login} >Login</div>
           <div>or</div>
           <div className='bn' onClick={() => navigate("/register")}>Register</div>
       </div>

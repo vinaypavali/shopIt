@@ -1,0 +1,166 @@
+/*.......... NavBar .......*/
+
+.navbar{
+    height: 50px;
+    background-color:rgb(5, 7, 11);
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navContainer{
+    width: 100%;
+    max-width: 1024px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo{
+    font-weight: bold;
+  }
+  
+  .navButton{
+    margin-left: 20px;
+    background-color: rgb(5, 7, 11);
+    border: none;
+    font-weight: bold;
+    padding: 10px 10px;
+    cursor: pointer;
+    color: white;
+  }
+  .navItems img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  
+  /*.......... NavBar .......*/
+
+.dataContainer{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows:350px 300px 600px;
+}
+.main{
+    background-color: #282A2D;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+}
+.im {
+  border-radius: 5px;
+}
+.im img{
+  background-color: white;
+  height: 325px;
+  width: 400px;
+  border-radius: 5px;
+}
+.de{
+  background-color: orange;
+}
+.vName h1{
+  color: white;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+.vPrice h2{
+  color: white;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+.bt button{
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  background-color: grey;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+.about{
+    background-color: #282A2D;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 5px;
+    
+}
+.about h3{
+  color: white;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.about h2{
+  color: white;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.Specs{
+  background-color: #282A2D;
+    color: white;
+    display: grid;
+    grid-gap: 5px 5px;
+    grid-template-columns: repeat(2,1fr);
+    margin-left: 50px;
+    margin-top: 15px;
+    border-radius: 5px;
+    margin-right: 50px;
+    border-radius: 5px;
+}
+.sp1{
+  background-color: #282A2D;
+  border-radius: 5px;
+  margin-left: 20px;
+  
+}
+
+.sp2{
+  background-color: #282A2D;
+  border-radius: 5px;
+  margin-left: 20px;
+    
+}
+.sp3{
+  background-color: #282A2D;
+  margin-left: 20px;
+    
+}
+.sp4{
+  background-color: #282A2D;
+  margin-left: 20px;
+    
+}
+.sp5{
+  background-color: #282A2D;
+  margin-left: 20px;
+    
+}
+.sp6{
+  background-color: #282A2D;
+  margin-left: 20px;
+    
+}
+.sp7{
+  background-color: #282A2D;
+  margin-left: 20px;
+    
+}
+.sp8{
+  background-color: #282A2D;
+  margin-left: 20px;
+    
+}
