@@ -33,7 +33,7 @@ const Home = () => {
 
          <div className="vehicle">
               <div className="bikes">
-        
+                <img src="./images/bike.jpeg" alt="" />
                 <button className='vehBtn' onClick={handleBikes}>Explore Bikes</button>
               </div>
               <div className="cars">

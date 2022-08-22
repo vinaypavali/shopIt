@@ -45,6 +45,10 @@
     .bikes{
       background-color: blue;
     }
+    .bikes img{
+      height: 300px;
+      width: 300px;
+    }
 
     .cars{
       background-color: yellow;
