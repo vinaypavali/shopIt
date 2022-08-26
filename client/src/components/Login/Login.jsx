@@ -23,13 +23,18 @@ const Login = () =>{
 
        
    const login = ()=> {
-    axios.post("/login", user)
-    .then(res =>{alert(res.data.message)
-      navigate("/")
-       } 
-       ) 
+    const {email,password} = user
+    if(email && password){
+        axios.post("/login", user)
+        .then( res => {
+            alert(res.data.message)
+            navigate("/home")
+        })
+    } else {
+        alert("invalid input")
+    }
          
-}
+     }
   
   
     return (

@@ -1,0 +1,35 @@
+/*.......... NavBar .......*/
+
+.navbar{
+    height: 50px;
+    background-color:rgb(5, 7, 11);
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navContainer{
+    width: 100%;
+    max-width: 1024px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo{
+    font-weight: bold;
+  }
+  
+  .navButton{
+    margin-left: 20px;
+    background-color: rgb(5, 7, 11);
+    border: none;
+    font-weight: bold;
+    padding: 10px 10px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  
+  /*.......... NavBar .......*/

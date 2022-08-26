@@ -131,15 +131,15 @@ router.get("/allcars", async (req, res) => {
 
  
 
-  router.get("/:id", async (req, res) => {
-    try {
-      const car = await Car.findById(req.params.id);
-      res.status(200).json(car);
+  // router.get("/:id", async (req, res) => {
+  //   try {
+  //     const car = await Car.findById(req.params.id);
+  //     res.status(200).json(car);
    
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+  //   } catch (err) {
+  //     res.status(500).json(err);
+  //   }
+  // });
 
  
 
@@ -183,6 +183,7 @@ router.get("/allbikes", async (req, res) => {
       res.status(500).json(err);
     }
   });
+  
 
 
 
