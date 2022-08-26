@@ -47,7 +47,7 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows:350px 300px 600px;
+    grid-template-rows:350px 300px 600px 300px;
 }
 .main{
     background-color: #282A2D;
@@ -163,4 +163,8 @@
   background-color: #282A2D;
   margin-left: 20px;
     
+}
+.footer{
+  margin-top: 10px;
+  background-color: #282A2D;
 }

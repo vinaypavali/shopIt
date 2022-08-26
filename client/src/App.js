@@ -9,16 +9,16 @@ import CarDetail from './components/Details/Cvehicle'
 import BikeDetail from './components/Details/Bvehicle'
 import Profile from './components/Profile/Profile'
 import Landing from './components/LandingPage/LandingPage'
-
- 
+import { useState } from "react";
 
 function App() {
+  const [user,setLoginUser]=useState({})
   return (
     <BrowserRouter>
     <Routes>
-      <Route exact path="/" element={<Landing/>}/>
-      <Route exact path="/home" element={<Home/>}/>
-      <Route path="/login" element={<Login/>}/>
+      <Route path="/" element={<Landing/>}/>
+      <Route exact path="/home" element={ user && user._id ?  <Home setLoginUser={setLoginUser}/> : <Login setLoginUser={setLoginUser}/> } /> 
+      <Route path="/login" element={<Login setLoginUser={setLoginUser}/>}/>
       <Route path="/register" element={<Register/>}/>
       <Route path="/bikes" element={<Bike/>}/>
       <Route path="/cars" element={<Car/>}/>

@@ -15,7 +15,7 @@ const Cvehicle = () => {
 
 useEffect(()=>{
   const getCar = async ()=>{
-    const res = await axios.get("/" + path );
+    const res = await axios.get("/c/" + path );
     setCar(res.data)
   
   };
@@ -68,6 +68,9 @@ const handleProfile = ()=>{
          <div className="sp6"><h4>Seating Capacity</h4><span>{car.seat}</span><hr/></div>
          <div className="sp7"><h4> Tranmission Type</h4><span>{car.transmission}</span></div>
           <div className="sp8"><h4>Body Type</h4> <span>{car.body}</span></div>
+        </div>
+        <div className="footer">
+          <h1>{car.carname}</h1>
         </div>
      </div>
     </>

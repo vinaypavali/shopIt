@@ -6,13 +6,13 @@ import axios from 'axios'
 
 const Bikes = () => { 
 
-  const [bikes,setBikes]=useState([""])
+  const [bikes,setBikes]=useState([{}])
 
   useEffect(()=>{
     const fetchBikes = async ()=>{
-      const res = await axios.get("/allbikes")
-      console.log(res)
-      setBikes(res.data)
+      const res = await axios.get("/allbikes");
+      console.log(res);
+      setBikes(res.data);
   
     }
      fetchBikes()

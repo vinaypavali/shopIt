@@ -1,3 +1,77 @@
-h1{
+ /*.......... NavBar .......*/
+
+.navbar{
+    height: 50px;
+    background-color:rgb(5, 7, 11);
     color: white;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navContainer{
+    width: 100%;
+    max-width: 1024px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo{
+    font-weight: bold;
+  }
+  
+  .navButton{
+    margin-left: 20px;
+    background-color: rgb(5, 7, 11);
+    border: none;
+    font-weight: bold;
+    padding: 10px 10px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  
+  /*.......... NavBar .......*/
+
+
+    .profileBox{
+      background-color:rgb(5, 7, 11);
+      padding: 20px;
+      margin-top: 40px;
+      margin-left: 350px;
+      border-radius: 20px;
+      border: 1px solid white;
+      width: 600px;
+      
+  }
+
+  .form-icon{
+    color: white;
+    font-size: 55px;
+    text-align: center;
+    line-height: 100px;
+    width: 100px;
+    height: 100px;
+    margin: 0px auto 15px;
+    border-radius: 50px; 
+    border: 1px solid white;
+
+}
+
+  .data{
+    color: white; 
+    font-size: 25px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+     
+  
+}
+.data h4{
+  margin-left: 100px;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
 }

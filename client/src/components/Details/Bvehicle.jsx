@@ -15,7 +15,7 @@ const Bvehicle = () => {
 
   useEffect(()=>{
     const getBike = async ()=>{
-      const res = await axios.get("/" + path );
+      const res = await axios.get("/b/" + path );
       setBike(res.data);
     
     };
@@ -67,6 +67,11 @@ const Bvehicle = () => {
          <div className="sp6"><h4>Seating Capacity</h4><span>{bike.seat}</span><hr/></div>
          <div className="sp7"><h4> Tranmission Type</h4><span>{bike.transmission}</span></div>
           <div className="sp8"><h4>Body Type</h4> <span>{bike.body}</span></div>
+        </div>
+        <div className="footer">
+        <div className="vName">
+                <h1>{bike.bikename}</h1>
+            </div>
         </div>
      </div>
     </>

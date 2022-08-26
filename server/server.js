@@ -1,8 +1,6 @@
 const express = require('express');
 const app = express(); 
-const multer = require("multer");
 const router = express.Router()
-const jwt = require('jsonwebtoken')
 const { default: mongoose } = require('mongoose')
 const User = require('./model/userSchema');
 const Car = require('./model/carSchema');
@@ -18,22 +16,7 @@ mongoose.connect("mongodb+srv://harshu:harshu@showroomc.0zml2ss.mongodb.net/?ret
 }).then(()=>console.log("MongoDB Connected..."))
 .catch((err)=>console.log(`Not Connected-- ${err}`))
 
-
-//Upload Image
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, "images");
-    },
-    filename: (req, file, cb) => {
-      cb(null, "mariya.jpg");
-    },
-  });
-  
-  const upload = multer({ storage: storage });
-  app.post("/upload", upload.single("file"), (req, res) => {
-    res.status(200).json("File has been uploaded");
-  });
-
+ 
 // Register User
 router.post('/register',async(req,res)=>{
     const {name,email,phone,password,cpassword}=req.body;
@@ -59,24 +42,6 @@ router.post('/register',async(req,res)=>{
     
   })
 
-  // Update User 
-router.put('/:id',async(req,res)=>{
-    if(req.body.userId === req.params.id){
-        try{
-            const updateUser = await User.findByIdAndUpdate(req.params.id,{
-                $set:req.body,
-            },{ new: true });
-          res.status(200).json(updateUser);
-
-        }catch(err){
-             res.status(500).res.json(err);
-        }
-
-    }else{
-        res.status(401).json('you can update only your account')
-    }
-
-})
 
 
 // Login User
@@ -98,6 +63,7 @@ router.post('/login',(req,res)=>{
     )
 
 })
+
 
 // addCars
 router.post('/cars',(req,res)=>{
@@ -129,21 +95,18 @@ router.get("/allcars", async (req, res) => {
     }
   });
 
- 
 
-  // router.get("/:id", async (req, res) => {
-  //   try {
-  //     const car = await Car.findById(req.params.id);
-  //     res.status(200).json(car);
+  router.get("/c/:id", async (req, res) => {
+    try {
+      const car = await Car.findById(req.params.id);
+      res.status(200).json(car);
    
-  //   } catch (err) {
-  //     res.status(500).json(err);
-  //   }
-  // });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
  
-
-
 
 // addBikes
 router.post('/bikes',(req,res)=>{
@@ -174,7 +137,7 @@ router.get("/allbikes", async (req, res) => {
     }
   });
 
-  router.get("/:id", async (req, res) => {
+  router.get("/b/:id", async (req, res) => {
     try {
       const bike = await Bike.findById(req.params.id);
       res.status(200).json(bike);
@@ -184,7 +147,5 @@ router.get("/allbikes", async (req, res) => {
     }
   });
   
-
-
 
 app.listen(8000,()=>console.log(`Server started..`)) 

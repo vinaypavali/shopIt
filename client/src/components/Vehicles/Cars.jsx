@@ -5,13 +5,13 @@ import { useState,useEffect } from 'react'
 import axios from 'axios'
 
 const Cars = () => {
-  const [cars,setCars]=useState([""])
+  const [cars,setCars]=useState([{}])
  
   useEffect(()=>{
     const fetchCars = async ()=>{
-      const res = await axios.get("/allcars")
-      console.log(res)
-      setCars(res.data)
+      const res = await axios.get("/allcars");
+      console.log(res);
+      setCars(res.data);
     }
      fetchCars()
   },[])

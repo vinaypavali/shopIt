@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import './login.css'
 
-const Login = () =>{
+const Login = ({setLoginUser}) =>{
 
     const navigate = useNavigate();
     
@@ -27,8 +27,11 @@ const Login = () =>{
     if(email && password){
         axios.post("/login", user)
         .then( res => {
-            alert(res.data.message)
-            navigate("/home")
+            alert(res.data.message);
+            setLoginUser(res.data.user);
+            navigate("/home");
+           
+            
         })
     } else {
         alert("invalid input")
