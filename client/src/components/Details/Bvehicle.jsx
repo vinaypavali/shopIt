@@ -49,7 +49,7 @@ const Bvehicle = () => {
             <h2>&#8377;&nbsp; {bike.price}</h2>
             </div>
             <div className="bt">
-              <button>Test Drive</button>
+                <a href="#t"><button>Test Drive</button></a>
             </div>
           </div>
         </div>
@@ -68,10 +68,17 @@ const Bvehicle = () => {
          <div className="sp7"><h4> Tranmission Type</h4><span>{bike.transmission}</span></div>
           <div className="sp8"><h4>Body Type</h4> <span>{bike.body}</span></div>
         </div>
-        <div className="footer">
-        <div className="vName">
-                <h1>{bike.bikename}</h1>
+        <div className="footer" id='t'>
+           <div className="tit"><h2>Test Drive</h2></div>
+           <div className="in">
+            <input type="text" name="" placeholder='Name' />
+            <input type="text" name="" value={bike.bikename} placeholder="Bike Name" />
+            <input type="text" name="" placeholder='Mobile Number' />
+           </div>
+           <div className="b">
+              <button>Test Drive</button>
             </div>
+
         </div>
      </div>
     </>
