@@ -22,7 +22,7 @@ router.post('/register',async(req,res)=>{
     const {name,email,phone,password,cpassword}=req.body;
      let exist = await User.findOne({email})
         if(exist) {
-            res.send("user Exist")
+            res.send({message:"user Exist"})
        }
        if(password !== cpassword){
         res.send({message:"Password doesn't match"})
