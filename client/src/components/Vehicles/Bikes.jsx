@@ -7,21 +7,24 @@ import axios from 'axios'
 const Bikes = () => { 
 
   const [bikes,setBikes]=useState([{}])
+  const [text,setText]=useState("")
+  
+  
 
   useEffect(()=>{
     const fetchBikes = async ()=>{
-      const res = await axios.get("/allbikes");
+      const res = await axios.get(`/allbikes`);
       console.log(res);
       setBikes(res.data);
   
     }
      fetchBikes()
   },[])
-
+ 
   return (
     <>
       <div className="search">
-         <input placeholder="Search for Bikes"/>
+         <input type="text" value={text} onChange={(e)=>setText(e.target.value.toLowerCase())} placeholder="Search for Bikes"/>
      </div>
     
         <div className="data">

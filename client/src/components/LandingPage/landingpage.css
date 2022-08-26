@@ -33,3 +33,17 @@
   
   
   /*.......... NavBar .......*/
+
+  .con{
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+  
+   }
+
+   .con img{   
+    width: 1280px;
+    height: 583px;
+    opacity: 0.6;
+    }
+ 

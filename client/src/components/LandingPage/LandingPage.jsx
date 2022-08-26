@@ -19,11 +19,14 @@ const LandingPage = () => {
             <span className='logo'>The Showroom</span>
             <div className="navItems">
                 <button className="navButton"  onClick={handleRegister}>Register</button>
-                <button className="navButton"  onClick={handleLogin}>Login</button> 
-                
+                <button className="navButton"  onClick={handleLogin}>Login</button>   
             </div>
         </div>
          </div>
+         <div className="con">
+            <img src="./images/main.gif" alt="" />
+          </div>
+ 
     
     </>
   )
