@@ -1,3 +1,3 @@
-# showroom_management 	
+# shopIt	
  
-Car &#128663; and Bike showroom management system using MERN Stack.
+An Ecommerce Project using MERN Stack.
